@@ -1,0 +1,193 @@
+/* ==============================
+   styling/style.css
+   ============================== */
+
+:root {
+    --clr-dark:    #111827;
+    --clr-accent:  #2563eb;
+    --clr-accent2: #1d4ed8;
+    --clr-light:   #f9fafb;
+    --clr-muted:   #6b7280;
+    --clr-card:    #ffffff;
+    --clr-border:  #e5e7eb;
+    --radius:      10px;
+    --shadow:      0 2px 12px rgba(0,0,0,.08);
+}
+
+/* ── Reset & Basis ─────────────────────── */
+*, *::before, *::after { 
+    box-sizing: border-box; 
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: var(--clr-light);
+    color: #1f2937;
+    margin: 0;
+}
+
+body { 
+    display: flex; 
+    flex-direction: column; 
+    min-height: 100vh; 
+}
+
+main { 
+    flex: 1; 
+}
+
+/* ── Navbar ─────────────────────── */
+.navbar { 
+    box-shadow: 0 1px 8px rgba(0,0,0,.25); 
+}
+
+.nav-link { 
+    font-size: .92rem; 
+    transition: color .2s; 
+}
+
+.nav-link:hover { 
+    color: var(--clr-accent) !important; 
+}
+
+/* ── Hero Section ───────────────────────── */
+.hero {
+    background: linear-gradient(135deg, var(--clr-dark) 0%, #1e3a5f 100%);
+    color: #fff;
+    padding: 80px 0 70px;
+    text-align: center;
+}
+
+.hero h1 { 
+    font-size: clamp(1.8rem, 4vw, 3rem); 
+    font-weight: 700; 
+    letter-spacing: -.5px; 
+}
+
+.hero p { 
+    color: #cbd5e1; 
+    font-size: 1.1rem; 
+}
+
+/* ── Product Cards ──────────────────────── */
+.product-card {
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius);
+    background: var(--clr-card);
+    box-shadow: var(--shadow);
+    transition: transform .25s, box-shadow .25s;
+    overflow: hidden;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+
+.product-card img,
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card .card-body { 
+    padding: 1.2rem; 
+}
+
+.price {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--clr-accent);
+}
+
+/* ── Buttons ────────────────────── */
+.btn-primary {
+    background: var(--clr-accent);
+    border-color: var(--clr-accent);
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.btn-primary:hover { 
+    background: var(--clr-accent2); 
+    border-color: var(--clr-accent2); 
+}
+
+.btn-outline-primary { 
+    border-color: var(--clr-accent); 
+    color: var(--clr-accent); 
+    border-radius: 6px; 
+    font-weight: 600; 
+}
+
+.btn-outline-primary:hover { 
+    background: var(--clr-accent); 
+    color: #fff; 
+}
+
+/* ── Forms & Cards ──────────────────────── */
+.form-card {
+    background: var(--clr-card);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 2rem 2.5rem;
+}
+
+.form-control, 
+.form-select {
+    border-radius: 6px;
+    border: 1px solid var(--clr-border);
+    font-size: .95rem;
+    padding: .5rem .85rem;
+}
+
+.form-control:focus, 
+.form-select:focus {
+    border-color: var(--clr-accent);
+    box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}
+
+.form-label { 
+    font-size: .88rem; 
+    font-weight: 600; 
+    color: #374151; 
+}
+
+.section-title { 
+    font-weight: 700; 
+    font-size: 1.5rem; 
+    margin-bottom: 1.5rem; 
+}
+
+/* ── Flash alerts ───────────────── */
+.alert { 
+    border-radius: var(--radius); 
+    font-size: .92rem; 
+}
+
+/* ── Profile Sidebar ───────────────── */
+.profile-sidebar {
+    background: var(--clr-card);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.profile-avatar {
+    width: 72px; 
+    height: 72px;
+    background: var(--clr-accent);
+    border-radius: 50%;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    font-size: 1.8rem; 
+    color: #fff; 
+    font-weight: 700;
+    margin: 0 auto 1rem;
+}
